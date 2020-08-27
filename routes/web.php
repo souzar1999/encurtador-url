@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/{hash}','ShortUrlController@access');
+
+Route::get('/urls/{hash}','ShortUrlController@accessDetails');
+
+Route::post('/urls','ShortUrlController@store');
+
+Route::put('/urls/{hash}','ShortUrlController@update');
+
+Route::delete('/urls/{hash}','ShortUrlController@delete');
